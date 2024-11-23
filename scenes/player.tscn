@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://icon.svg" id="1_x2gi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1dt"]
-size = Vector2(127, 128)
+size = Vector2(64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjplt"]
 atlas = ExtResource("1_x2gi8")
@@ -25,9 +25,9 @@ animations = [{
 script = ExtResource("1_ae77p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_jo1dt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tw6i3")
