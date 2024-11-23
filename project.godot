@@ -15,6 +15,10 @@ run/main_scene="res://scenes/levels/level_1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://textures/icon.svg"
 
+[display]
+
+window/size/viewport_height=640
+
 [global_group]
 
 player=""

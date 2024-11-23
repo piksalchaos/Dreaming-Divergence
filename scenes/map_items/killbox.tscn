@@ -8,6 +8,7 @@ size = Vector2(64, 64)
 
 [node name="Killbox" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_ehs82")
+is_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2ednk")

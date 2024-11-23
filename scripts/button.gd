@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var targets: Array[Node]
-@export var enabled: bool = true
+@export var is_enabled: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if not enabled:
+	if not is_enabled:
 		return
 	if not body.is_in_group("player"):
 		return
