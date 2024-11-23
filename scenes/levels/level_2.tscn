@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://bgtwst8fuyemu"]
+[gd_scene load_steps=7 format=4 uid="uid://bgtwst8fuyemu"]
 
 [ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_pvr4h"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_15vnu"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_t7ck4"]
 [ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="3_23erc"]
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="4_1xl4l"]
+[ext_resource type="PackedScene" uid="uid://cvu10ygs5njfp" path="res://scenes/ui.tscn" id="6_g5xoj"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAD//wkAAQAAAAAAAAD//woAAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAASAAoAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAIAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAASAP//AQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAA=")
 tile_set = ExtResource("1_pvr4h")
+script = ExtResource("2_15vnu")
 
 [node name="Player" parent="." instance=ExtResource("2_t7ck4")]
 position = Vector2(480, 544)
@@ -22,3 +25,5 @@ targets = [NodePath("../Killbox")]
 [node name="Killbox" parent="." instance=ExtResource("4_1xl4l")]
 position = Vector2(352, 544)
 is_enabled = false
+
+[node name="UI" parent="." instance=ExtResource("6_g5xoj")]
