@@ -15,4 +15,4 @@ position = Vector2(350, 208)
 position = Vector2(1000, 300)
 
 [node name="Portal" parent="." instance=ExtResource("3_3ttsd")]
-position = Vector2(890, 512)
+position = Vector2(893, 533)
