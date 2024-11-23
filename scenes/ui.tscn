@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvu10ygs5njfp"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_agjri"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_agjri"]
 
 [sub_resource type="Theme" id="Theme_40lfs"]
 default_font_size = 50

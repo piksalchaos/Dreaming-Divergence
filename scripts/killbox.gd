@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _on_body_entered(body: PhysicsBody2D):
+func _on_body_entered(body: Node2D):
 	if not is_enabled:
 		return
 	if body.is_in_group("player"):
