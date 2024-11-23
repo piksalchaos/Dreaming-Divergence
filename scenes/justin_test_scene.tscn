@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0lgcf21e7xp6"]
+
+[ext_resource type="TileSet" uid="uid://itdcv68mp20x" path="res://scenes/tile_set.tres" id="1_fnqmp"]
+
+[node name="JustinTestScene" type="TileMapLayer"]
+tile_set = ExtResource("1_fnqmp")
