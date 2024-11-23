@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh03fs7b8i1oi"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_g4y6o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_g4y6o")
