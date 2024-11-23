@@ -1,10 +1,14 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://itdcv68mp20x"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://itdcv68mp20x"]
 
+[ext_resource type="PackedScene" uid="uid://du5mrnkg31ygw" path="res://scenes/conveyor_belt_left.tscn" id="1_7tihd"]
 [ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://icon.svg" id="1_b6h3j"]
 [ext_resource type="PackedScene" path="res://scenes/killbox.tscn" id="1_fuc5k"]
+[ext_resource type="PackedScene" uid="uid://dww7j6esc1k68" path="res://scenes/conveyor_belt_right.tscn" id="3_qy4dd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xp4yd"]
+scenes/1/scene = ExtResource("1_7tihd")
 scenes/2/scene = ExtResource("1_fuc5k")
+scenes/3/scene = ExtResource("3_qy4dd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvnfq"]
 texture = ExtResource("1_b6h3j")
