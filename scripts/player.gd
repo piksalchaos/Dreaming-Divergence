@@ -10,6 +10,7 @@ signal killed
 
 @export var enabled: bool = true
 
+var is_dead = false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -31,6 +32,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 func kill():
+	#prevents kill from firing signal twice
+	if is_dead:
+		return
+	is_dead = true
 	killed.emit()
 	queue_free()
 
