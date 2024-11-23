@@ -1,9 +1,12 @@
+class_name Player
+
 extends CharacterBody2D
 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+signal killed
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +26,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+func kill():
+	killed.emit()
+	queue_free()
