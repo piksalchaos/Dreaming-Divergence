@@ -8,11 +8,15 @@ const JUMP_VELOCITY = -400.0
 
 signal killed
 
+@export var enabled: bool = true
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
+	if not enabled:
+		return
 	# Handle jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -29,3 +33,6 @@ func _physics_process(delta: float) -> void:
 func kill():
 	killed.emit()
 	queue_free()
+
+func switch():
+	enabled = not enabled

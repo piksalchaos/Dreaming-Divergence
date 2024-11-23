@@ -13,11 +13,12 @@ config_version=5
 config/name="Counterspell"
 run/main_scene="res://scenes/levels/level_1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://textures/icon.svg"
 
 [global_group]
 
 player=""
+switchable=""
 
 [input]
 

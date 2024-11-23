@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cx8c4gf4eg0a8"]
 
-[ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://icon.svg" id="1_b6h3j"]
-[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="1_fuc5k"]
+[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="1_g3xq5"]
+[ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://textures/icon.svg" id="2_u1bw7"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xp4yd"]
-scenes/2/scene = ExtResource("1_fuc5k")
+scenes/2/scene = ExtResource("1_g3xq5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvnfq"]
-texture = ExtResource("1_b6h3j")
+texture = ExtResource("2_u1bw7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)

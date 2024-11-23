@@ -16,5 +16,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 	for target in targets:
-		if "enabled" in target:
-			target.enabled = not target.enabled
+		if target.is_in_group("switchable"):
+			target.switch()

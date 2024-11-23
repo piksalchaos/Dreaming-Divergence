@@ -8,5 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_body_entered(body: PhysicsBody2D):
+	if not enabled:
+		return
 	if body.is_in_group("player"):
 		body.kill()
+
+func switch():
+	enabled = not enabled
