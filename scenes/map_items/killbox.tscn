@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg1y0vwoau1i4"]
 
 [ext_resource type="Script" path="res://scripts/killbox.gd" id="1_ehs82"]
-[ext_resource type="Texture2D" uid="uid://q47v6prd8cbj" path="res://textures/ao3.png" id="2_2ednk"]
+[ext_resource type="Texture2D" uid="uid://cpd12w1uwd88k" path="res://textures/spike.png" id="2_o8s0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnrlf"]
 size = Vector2(64, 64)
@@ -11,8 +11,8 @@ script = ExtResource("1_ehs82")
 is_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2ednk")
-region_enabled = true
+texture = ExtResource("2_o8s0m")
+hframes = 2
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
