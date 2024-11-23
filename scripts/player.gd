@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	for body in floor_checker.get_overlapping_bodies():
 		if body is ConveyorBelt:
 			velocity.x += body.get_velocity()
+			break
 	
 	move_and_slide()
 
