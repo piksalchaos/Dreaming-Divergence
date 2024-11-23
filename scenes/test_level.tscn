@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=4 uid="uid://dl6akbg7sgo5q"]
+
+[ext_resource type="TileSet" uid="uid://itdcv68mp20x" path="res://scenes/tile_set.tres" id="1_bl60q"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_8ek7u"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAD//wAAAQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD9////AQAAAAAAAAD8////AQAAAAAAAAD9/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAkAAQAAAAAAAAA=")
+tile_set = ExtResource("1_bl60q")
+
+[node name="Player" parent="." instance=ExtResource("2_8ek7u")]
+position = Vector2(350, 208)
+
+[node name="Player2" parent="." instance=ExtResource("2_8ek7u")]
+position = Vector2(1000, 300)
