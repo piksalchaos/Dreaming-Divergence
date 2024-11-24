@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -520.0
 @export var enabled: bool = true
 
 signal killed

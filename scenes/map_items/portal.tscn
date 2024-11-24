@@ -36,7 +36,7 @@ animations = [{
 radius = 36.0
 height = 110.0
 
-[node name="Portal" type="Area2D"]
+[node name="Portal" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_c55g8")
 teleport_position = Vector2(200, 200)
 

@@ -26,7 +26,6 @@ func close():
 	sprite_2d.frame = CLOSED_FRAME
 
 func switch():
-	print("grahhhh")
 	if is_open:
 		close()
 	else:

@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=4 uid="uid://fnowq0fc3eet"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_thloy"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_3io85"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_0wluq"]
+[ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="4_mlod2"]
+[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_kjy68"]
+[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_h2nfu"]
+[ext_resource type="PackedScene" uid="uid://chmpklgegy66a" path="res://scenes/map_items/portal.tscn" id="7_bh5ke"]
+[ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="7_r6hey"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAKAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQAAAAAAAAAEAAcAAQAAAAAAAAADAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAAOAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAKAAgAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAA=")
+tile_set = ExtResource("1_thloy")
+script = ExtResource("2_3io85")
+
+[node name="Player" parent="." instance=ExtResource("3_0wluq")]
+position = Vector2(288, 544)
+
+[node name="Player2" parent="." instance=ExtResource("3_0wluq")]
+position = Vector2(608, 544)
+
+[node name="UI" parent="." instance=ExtResource("6_h2nfu")]
+metadata/_edit_lock_ = true
+
+[node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_mlod2")]
+position = Vector2(608, 352)
+targets = [NodePath("../Killbox2"), NodePath("../Door")]
+
+[node name="Door" parent="." instance=ExtResource("7_r6hey")]
+position = Vector2(416, 480)
+
+[node name="Portal" parent="." instance=ExtResource("7_bh5ke")]
+position = Vector2(856, 520)
+teleport_position = Vector2(416, 416)
+is_enabled = true
+
+[node name="Killbox" parent="." instance=ExtResource("5_kjy68")]
+position = Vector2(608, 224)
+
+[node name="Killbox2" parent="." instance=ExtResource("5_kjy68")]
+position = Vector2(224, 544)
+is_enabled = false

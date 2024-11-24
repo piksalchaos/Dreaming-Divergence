@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=4 uid="uid://iapv6leeeki3"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_c5hm7"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_4hn3g"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_t5mm2"]
+[ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="4_a6cg0"]
+[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_03qnj"]
+[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_xvby2"]
+[ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="7_7jbtp"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAARAAoAAQAAAAAAAAARAAkAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAgAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAYAAQAAAAAAAAACAAYAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAUAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAMAAIAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAOAAIAAQAAAAAAAAAPAAIAAQAAAAAAAAAQAAIAAQAAAAAAAAANAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAMAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAAGAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAA=")
+tile_set = ExtResource("1_c5hm7")
+script = ExtResource("2_4hn3g")
+
+[node name="Player" parent="." instance=ExtResource("3_t5mm2")]
+position = Vector2(288, 544)
+
+[node name="Player2" parent="." instance=ExtResource("3_t5mm2")]
+position = Vector2(800, 544)
+
+[node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_a6cg0")]
+position = Vector2(32, 544)
+targets = [NodePath("../Door2")]
+
+[node name="Button3" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_a6cg0")]
+position = Vector2(608, 288)
+targets = [NodePath("../Door"), NodePath("../Player"), NodePath("../Door2"), NodePath("../Door3")]
+
+[node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_a6cg0")]
+position = Vector2(288, 160)
+targets = [NodePath("../Door4")]
+
+[node name="Button4" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_a6cg0")]
+position = Vector2(1056, 96)
+targets = [NodePath("../Door"), NodePath("../Button3"), NodePath("../Door5")]
+
+[node name="Button5" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_a6cg0")]
+position = Vector2(736, 160)
+targets = [NodePath("../Player")]
+
+[node name="Killbox" parent="." instance=ExtResource("5_03qnj")]
+position = Vector2(544, 96)
+is_enabled = false
+
+[node name="Killbox2" parent="." instance=ExtResource("5_03qnj")]
+position = Vector2(608, 96)
+is_enabled = false
+
+[node name="UI" parent="." instance=ExtResource("6_xvby2")]
+metadata/_edit_lock_ = true
+
+[node name="Door" parent="." instance=ExtResource("7_7jbtp")]
+position = Vector2(992, 352)
+is_open = false
+
+[node name="Door2" parent="." instance=ExtResource("7_7jbtp")]
+position = Vector2(544, 352)
+is_open = false
+
+[node name="Door3" parent="." instance=ExtResource("7_7jbtp")]
+position = Vector2(480, 288)
+is_open = false
+
+[node name="Door5" parent="." instance=ExtResource("7_7jbtp")]
+position = Vector2(480, 32)
+is_open = false
+
+[node name="Door4" parent="." instance=ExtResource("7_7jbtp")]
+position = Vector2(672, 32)
+is_open = false

@@ -25,3 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 	for target in targets:
 		if is_instance_valid(target) and target.is_in_group("switchable"):
 			target.switch()
+
+func switch():
+	is_enabled = not is_enabled
