@@ -12,10 +12,6 @@ func _ready() -> void:
 	player_1.killed.connect(on_player_death)
 	player_2.killed.connect(on_player_death)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func on_player_death():
 	print(num_alive_players)
 	num_alive_players -= 1
