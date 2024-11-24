@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg1y0vwoau1i4"]
 
 [ext_resource type="Script" path="res://scripts/killbox.gd" id="1_ehs82"]
-[ext_resource type="Texture2D" uid="uid://cpd12w1uwd88k" path="res://textures/spike.png" id="2_o8s0m"]
+[ext_resource type="Texture2D" uid="uid://b4ksaar3r4hsg" path="res://textures/spikes.png" id="2_rr48j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnrlf"]
 size = Vector2(64, 40)
@@ -11,7 +11,7 @@ script = ExtResource("1_ehs82")
 is_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_o8s0m")
+texture = ExtResource("2_rr48j")
 hframes = 2
 region_rect = Rect2(0, 0, 64, 64)
 
