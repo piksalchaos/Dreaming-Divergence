@@ -10,12 +10,24 @@ const OPEN_FRAME: int = 1
 var is_open = true
 
 func _ready() -> void:
-	pass # Replace with function body.
+	if is_open:
+		open()
+	else:
+		close()
 
 func open():
+	is_open = true
 	collision_shape_2d.disabled = true
 	sprite_2d.frame = OPEN_FRAME
 
 func close():
-	collision_shape_2d.disabled = true
+	is_open = false
+	collision_shape_2d.disabled = false
 	sprite_2d.frame = CLOSED_FRAME
+
+func switch():
+	print("grahhhh")
+	if is_open:
+		close()
+	else:
+		open()
