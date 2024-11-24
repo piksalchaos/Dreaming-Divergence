@@ -14,6 +14,8 @@ func _ready() -> void:
 		open()
 	else:
 		close()
+		
+	
 
 func open():
 	is_open = true
