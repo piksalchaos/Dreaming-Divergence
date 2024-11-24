@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://df8yprbv6s7ll"]
+[gd_scene load_steps=8 format=3 uid="uid://df8yprbv6s7ll"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ae77p"]
 [ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://textures/icon.svg" id="1_x2gi8"]
+[ext_resource type="AudioStream" uid="uid://dpox861a1f43s" path="res://sounds/jump.wav" id="4_e6u3p"]
+[ext_resource type="PackedScene" uid="uid://d2y1xje3nhtik" path="res://sounds/death_sfx.tscn" id="4_yyf1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1dt"]
 size = Vector2(62, 62)
@@ -31,3 +33,11 @@ shape = SubResource("RectangleShape2D_jo1dt")
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tw6i3")
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e6u3p")
+volume_db = -17.802
+bus = &"SFX"
+playback_type = 1
+
+[node name="deathSFX" parent="." instance=ExtResource("4_yyf1c")]

@@ -10,7 +10,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if not is_enabled:
 		return
@@ -24,4 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	for target in targets:
 		if is_instance_valid(target) and target.is_in_group("switchable"):
+			$buttonSFX.play()
 			target.switch()

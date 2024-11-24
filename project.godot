@@ -18,6 +18,7 @@ config/icon="res://textures/icon.svg"
 [autoload]
 
 Backgroundmusic="*res://sounds/backgroundmusic.tscn"
+DeathSfx="*res://sounds/death_sfx.tscn"
 
 [display]
 
