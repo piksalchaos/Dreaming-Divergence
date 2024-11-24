@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://c0lgcf21e7xp6"]
 
-[ext_resource type="TileSet" uid="uid://bkd205k3pl5a3" path="res://scenes/tile_set.tres" id="1_fnqmp"]
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_fnqmp"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_q7iy8"]
 
 [node name="JustinTestScene" type="TileMapLayer"]
