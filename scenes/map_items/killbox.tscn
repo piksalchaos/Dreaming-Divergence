@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpd12w1uwd88k" path="res://textures/spike.png" id="2_o8s0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnrlf"]
-size = Vector2(64, 64)
+size = Vector2(64, 40)
 
 [node name="Killbox" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_ehs82")
@@ -16,6 +16,7 @@ hframes = 2
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_wnrlf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

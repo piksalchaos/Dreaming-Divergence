@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://ddvpgfnejgwpx"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_xyq2g"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_jc22u"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_adiim"]
+[ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="4_6kp28"]
+[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_iph2y"]
+[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_ufa2n"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAD//wkAAQAAAAAAAAD//woAAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAASAAoAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAIAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAASAP//AQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAAQAAgAAQAAAAAAAAARAAgAAQAAAAAAAAA=")
+tile_set = ExtResource("1_xyq2g")
+script = ExtResource("2_jc22u")
+
+[node name="Player" parent="." instance=ExtResource("3_adiim")]
+position = Vector2(160, 608)
+
+[node name="Player2" parent="." instance=ExtResource("3_adiim")]
+position = Vector2(1120, 608)
+
+[node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_6kp28")]
+position = Vector2(1120, 480)
+targets = [NodePath("../Killbox")]
+
+[node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_6kp28")]
+position = Vector2(32, 608)
+targets = [NodePath("../Player2")]
+
+[node name="Killbox" parent="." instance=ExtResource("5_iph2y")]
+position = Vector2(288, 608)
+is_enabled = false
+
+[node name="UI" parent="." instance=ExtResource("6_ufa2n")]
+metadata/_edit_lock_ = true

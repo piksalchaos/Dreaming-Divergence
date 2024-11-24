@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 func on_player_death():
+	print(num_alive_players)
 	num_alive_players -= 1
 	if num_alive_players <= 0 and next_scene:
 		get_tree().change_scene_to_packed.call_deferred(next_scene)
@@ -24,4 +25,3 @@ func on_player_death():
 func _input(event):
 	if event.is_action_pressed("respawn"):
 		get_tree().reload_current_scene.call_deferred()
-		
