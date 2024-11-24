@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://chmpklgegy66a"]
+[gd_scene load_steps=8 format=3 uid="uid://chmpklgegy66a"]
 
 [ext_resource type="Script" path="res://scripts/portal.gd" id="1_c55g8"]
-[ext_resource type="Texture2D" uid="uid://oa0jjbapsay8" path="res://textures/New Piskel (1).png" id="2_apkxb"]
-[ext_resource type="AudioStream" uid="uid://cuaaso77kdyyx" path="res://sounds/portal.wav" id="3_l0hjg"]
+[ext_resource type="Texture2D" uid="uid://dwr1w75bhryx3" path="res://textures/portal.png" id="2_r3baj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j226r"]
 atlas = ExtResource("2_r3baj")
@@ -48,8 +47,5 @@ frame_progress = 0.00572931
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d5htn")
 debug_color = Color(0.819954, 0.360367, 0.480192, 0.42)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_l0hjg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
