@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=4 uid="uid://coh63e4c52e36"]
 
-[ext_resource type="Texture2D" uid="uid://br3thbma73k5l" path="res://textures/tileset.png" id="1_wdug4"]
-[ext_resource type="PackedScene" uid="uid://dydrvo0gh1glk" path="res://scenes/map_items/portal.tscn" id="2_eaxfl"]
-[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_hrvj5"]
+[ext_resource type="Texture2D" uid="uid://br3thbma73k5l" path="res://textures/tileset.png" id="1_qaa2n"]
+[ext_resource type="PackedScene" uid="uid://dydrvo0gh1glk" path="res://scenes/map_items/portal.tscn" id="2_etob1"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_84i2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xh06"]
-texture = ExtResource("1_wdug4")
+texture = ExtResource("1_qaa2n")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -21,9 +21,9 @@ sources/1 = SubResource("TileSetAtlasSource_4xh06")
 tile_map_data = PackedByteArray("AAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAHAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAARAAkAAQAAAAAAAAARAAgAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAAQAAcAAQAAAAAAAAAQAAYAAQAAAAAAAAAJAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAADAAkAAQAAAAAAAAACAAkAAQAAAAAAAAACAAgAAQAAAAAAAAACAAcAAQAAAAAAAAABAAcAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAkAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_huibp")
 
-[node name="Portal" parent="." instance=ExtResource("2_eaxfl")]
+[node name="Portal" parent="." instance=ExtResource("2_etob1")]
 position = Vector2(752, 469)
 is_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("3_hrvj5")]
+[node name="Player" parent="." instance=ExtResource("3_84i2w")]
 position = Vector2(417, 386)

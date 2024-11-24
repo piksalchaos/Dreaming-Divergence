@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_roypg"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_t7ck4"]
 [ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="3_23erc"]
-[ext_resource type="PackedScene" uid="uid://ev408mauv4db" path="res://scenes/levels/level_3.tscn" id="3_f8iwk"]
+[ext_resource type="PackedScene" uid="uid://bgtwst8fuyemu" path="res://scenes/levels/level_3.tscn" id="3_f8iwk"]
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="4_1xl4l"]
 [ext_resource type="PackedScene" uid="uid://cvu10ygs5njfp" path="res://scenes/ui.tscn" id="6_g5xoj"]
 
