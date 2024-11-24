@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://c1r2l1nri3mlu"]
+[gd_scene load_steps=8 format=4 uid="uid://ddmquwkbynse1"]
 
-[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_oneki"]
+[ext_resource type="TileSet" uid="uid://bkd205k3pl5a3" path="res://scenes/tile_set.tres" id="1_oneki"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_12lo1"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_xbkq2"]
 [ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="4_ukiex"]
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_hjoqg"]
-[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_sfc58"]
-[ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="7_oobnd"]
+[ext_resource type="PackedScene" uid="uid://cvu10ygs5njfp" path="res://scenes/ui.tscn" id="6_sfc58"]
+[ext_resource type="PackedScene" uid="uid://d1cjgwcs32eq1" path="res://scenes/map_items/door.tscn" id="7_oobnd"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
 position = Vector2(-32, -8)

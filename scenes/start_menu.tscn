@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlypbw3nqhbxs"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_2c8pw"]
+[ext_resource type="FontFile" uid="uid://dqx5h0agsim66" path="res://fonts/m5x7.ttf" id="1_tavov"]
+[ext_resource type="AudioStream" uid="uid://c4sy75t47mv6u" path="res://sounds/brownian_noise.ogg" id="3_4074m"]
+
+[sub_resource type="Theme" id="Theme_u1mpj"]
+Button/colors/font_hover_color = Color(0.921569, 0.435294, 0.572549, 1)
+Button/colors/font_pressed_color = Color(0.615132, 0.168763, 0.322204, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_tavov")
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2c8pw")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 60.0
+offset_right = 174.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u1mpj")
+text = "Begin the Dream"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4074m")
+autoplay = true
+parameters/looping = true
+
+[connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
