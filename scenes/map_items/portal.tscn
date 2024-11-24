@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://chmpklgegy66a"]
+
+[ext_resource type="Script" path="res://scripts/portal.gd" id="1_c55g8"]
+[ext_resource type="Texture2D" uid="uid://oa0jjbapsay8" path="res://textures/New Piskel (1).png" id="2_apkxb"]
+[ext_resource type="AudioStream" uid="uid://bk1aluy5ynm60" path="res://sounds/portal.wav" id="3_exakc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouubm"]
+atlas = ExtResource("2_apkxb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xinjm"]
+atlas = ExtResource("2_apkxb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5m5w"]
+atlas = ExtResource("2_apkxb")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_siiwo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouubm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xinjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5m5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nykfq"]
+radius = 36.0
+height = 110.0
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_c55g8")
+teleport_position = Vector2(200, 200)
+
+[node name="portalSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(4.19126, 3.21892)
+sprite_frames = SubResource("SpriteFrames_siiwo")
+autoplay = "default"
+frame_progress = 0.00572931
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 0)
+shape = SubResource("CapsuleShape2D_nykfq")
+debug_color = Color(0.819954, 0.360367, 0.480192, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_exakc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

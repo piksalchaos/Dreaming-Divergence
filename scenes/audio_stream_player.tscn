@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buqbex6e43fu2"]
+
+[ext_resource type="AudioStream" uid="uid://bf6chpx2k6d4h" path="res://sounds/game.ogg" id="1_1was5"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_1was5")
+volume_db = -28.576
+autoplay = true
