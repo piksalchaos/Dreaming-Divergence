@@ -2,11 +2,12 @@ class_name Player extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
+@export var enabled: bool = true
 
 signal killed
 
-@export var enabled: bool = true
+
 
 var is_dead = false
 func _physics_process(delta: float) -> void:

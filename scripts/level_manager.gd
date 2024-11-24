@@ -13,7 +13,6 @@ func _ready() -> void:
 	player_2.killed.connect(on_player_death)
 
 func on_player_death():
-	print(num_alive_players)
 	num_alive_players -= 1
 	if num_alive_players <= 0 and next_scene:
 		get_tree().change_scene_to_packed.call_deferred(next_scene)
