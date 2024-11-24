@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhpjmd8ruqeim"]
 
+[ext_resource type="Texture2D" uid="uid://d0n3oicvd3gia" path="res://textures/death_particle.png" id="1_mqacj"]
 [ext_resource type="Script" path="res://scripts/death_particles.gd" id="1_wa2vs"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1vfkx"]
@@ -12,13 +13,11 @@ gravity = Vector3(0, 50, 0)
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x55lu"]
-
 [node name="DeathParticles" type="GPUParticles2D"]
 emitting = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_1vfkx")
-texture = SubResource("PlaceholderTexture2D_x55lu")
+texture = ExtResource("1_mqacj")
 lifetime = 1.5
 one_shot = true
 explosiveness = 1.0

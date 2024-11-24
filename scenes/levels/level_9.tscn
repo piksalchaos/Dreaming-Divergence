@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=4 uid="uid://p8q8g1yk4j24"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_ps5i1"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_whu08"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="3_88y6a"]
+[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="4_actni"]
+[ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="5_r4p1p"]
+[ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="6_30xay"]
+[ext_resource type="PackedScene" uid="uid://chmpklgegy66a" path="res://scenes/map_items/portal.tscn" id="7_jg5er"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAASAAoAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAIAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAD//wIAAQAAAAAAAAAIAP//AQAAAAAAAAACAAoAAQAAAAAAAAD//woAAQAAAAAAAAASAP//AQAAAAAAAAAJAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAKAAAAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAAAAgAAQAAAAAAAAABAAgAAQAAAAAAAAACAAgAAQAAAAAAAAADAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAQAAgAAQAAAAAAAAARAAgAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAANAAcAAQAAAAAAAAADAAcAAQAAAAAAAAADAAYAAQAAAAAAAAADAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAACAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAHAAUAAQAAAAAAAAAGAAMAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAKAAEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAAPAAYAAQAAAAAAAAARAAUAAQAAAAAAAAAQAAMAAQAAAAAAAAANAAQAAQAAAAAAAAANAAMAAQAAAAAAAAANAAIAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAAAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAA=")
+tile_set = ExtResource("1_ps5i1")
+script = ExtResource("2_whu08")
+
+[node name="Player" parent="." instance=ExtResource("3_88y6a")]
+position = Vector2(32, 608)
+
+[node name="Player2" parent="." instance=ExtResource("3_88y6a")]
+position = Vector2(672, 608)
+
+[node name="UI" parent="." instance=ExtResource("4_actni")]
+metadata/_edit_lock_ = true
+
+[node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(32, 480)
+targets = [NodePath("../Door2")]
+
+[node name="Button6" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(32, 288)
+targets = [NodePath("../Door6"), NodePath("../Door7"), NodePath("../Door5")]
+
+[node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(672, 480)
+targets = [NodePath("../Door")]
+
+[node name="Button4" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(672, 288)
+targets = [NodePath("../Door3"), NodePath("../Door4"), NodePath("../Door8")]
+
+[node name="Button3" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(544, 96)
+targets = [NodePath("../Player")]
+
+[node name="Button5" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_r4p1p")]
+position = Vector2(608, 96)
+targets = [NodePath("../Player2")]
+
+[node name="Door" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(288, 544)
+is_open = false
+
+[node name="Door8" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(352, 608)
+
+[node name="Door3" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(352, 96)
+is_open = false
+
+[node name="Door7" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(992, 96)
+is_open = false
+
+[node name="Door4" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(416, 96)
+is_open = false
+
+[node name="Door6" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(1056, 96)
+is_open = false
+
+[node name="Door2" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(927, 544)
+is_open = false
+
+[node name="Door5" parent="." instance=ExtResource("6_30xay")]
+position = Vector2(992, 608)
+
+[node name="Portal" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(152, 456)
+teleport_position = Vector2(672, 160)
+is_enabled = true
+
+[node name="Portal5" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(152, 264)
+teleport_position = Vector2(864, 608)
+is_enabled = true
+
+[node name="Portal8" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(416, 56)
+teleport_position = Vector2(544, 32)
+is_enabled = true
+
+[node name="Portal3" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(792, 456)
+teleport_position = Vector2(32, 160)
+is_enabled = true
+
+[node name="Portal6" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(792, 264)
+teleport_position = Vector2(268, 602)
+is_enabled = true
+
+[node name="Portal7" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(1048, 56)
+teleport_position = Vector2(608, 32)
+is_enabled = true
+
+[node name="Portal2" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(1112, 584)
+teleport_position = Vector2(32, 416)
+is_enabled = true
+
+[node name="Portal4" parent="." instance=ExtResource("7_jg5er")]
+position = Vector2(477, 584)
+teleport_position = Vector2(672, 416)
+is_enabled = true

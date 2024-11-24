@@ -10,34 +10,78 @@
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="8_54tqa"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
-tile_map_data = PackedByteArray("AAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAKAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQAAAAAAAAAEAAcAAQAAAAAAAAADAAcAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAAOAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAKAAgAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAASAAoAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAASAAIAAQAAAAAAAAASAAEAAQAAAAAAAAASAAAAAQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAD//wIAAQAAAAAAAAAIAP//AQAAAAAAAAACAAoAAQAAAAAAAAD//woAAQAAAAAAAAASAP//AQAAAAAAAAADAAgAAQAAAAAAAAADAAcAAQAAAAAAAAACAAcAAQAAAAAAAAABAAcAAQAAAAAAAAAAAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAHAAcAAQAAAAAAAAADAAUAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAUAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAJAAAAAQAAAAAAAAAMAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQAAAAAAAAAOAAkAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAARAAcAAQAAAAAAAAALAAcAAQAAAAAAAAALAAMAAQAAAAAAAAA=")
 tile_set = ExtResource("1_wylqf")
 script = ExtResource("2_mp46y")
 
 [node name="Player" parent="." instance=ExtResource("3_djrik")]
-position = Vector2(288, 544)
+position = Vector2(96, 608)
 
 [node name="Player2" parent="." instance=ExtResource("3_djrik")]
-position = Vector2(608, 544)
+position = Vector2(864, 608)
 
 [node name="UI" parent="." instance=ExtResource("4_37s8k")]
 metadata/_edit_lock_ = true
 
 [node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]
-position = Vector2(608, 352)
-targets = [NodePath("../Killbox2"), NodePath("../Door")]
+position = Vector2(96, 544)
+targets = [NodePath("../Door")]
+
+[node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]
+position = Vector2(32, 416)
+targets = [NodePath("../Door3"), NodePath("../Door2")]
+
+[node name="Button3" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]
+position = Vector2(672, 160)
+targets = [NodePath("../Door4")]
+
+[node name="Button5" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]
+position = Vector2(1056, 224)
+targets = [NodePath("../Door5")]
 
 [node name="Door" parent="." instance=ExtResource("6_3qyk0")]
-position = Vector2(416, 480)
+position = Vector2(224, 608)
+is_open = false
+
+[node name="Door3" parent="." instance=ExtResource("6_3qyk0")]
+position = Vector2(224, 416)
+is_open = false
+
+[node name="Door4" parent="." instance=ExtResource("6_3qyk0")]
+position = Vector2(544, 416)
+is_open = false
+
+[node name="Door5" parent="." instance=ExtResource("6_3qyk0")]
+position = Vector2(1056, 480)
+is_open = false
+
+[node name="Door2" parent="." instance=ExtResource("6_3qyk0")]
+position = Vector2(864, 544)
+is_open = false
 
 [node name="Portal" parent="." instance=ExtResource("7_ymebb")]
-position = Vector2(856, 520)
-teleport_position = Vector2(416, 416)
+position = Vector2(408, 192)
+teleport_position = Vector2(32, 352)
+is_enabled = true
+
+[node name="Portal2" parent="." instance=ExtResource("7_ymebb")]
+position = Vector2(992, 584)
+teleport_position = Vector2(128, 88)
+is_enabled = true
+
+[node name="Portal4" parent="." instance=ExtResource("7_ymebb")]
+position = Vector2(728, 584)
+teleport_position = Vector2(672, 32)
 is_enabled = true
 
 [node name="Killbox" parent="." instance=ExtResource("8_54tqa")]
-position = Vector2(608, 224)
+position = Vector2(32, 224)
 
 [node name="Killbox2" parent="." instance=ExtResource("8_54tqa")]
-position = Vector2(224, 544)
-is_enabled = false
+position = Vector2(96, 224)
+
+[node name="Killbox3" parent="." instance=ExtResource("8_54tqa")]
+position = Vector2(160, 224)
+
+[node name="Killbox4" parent="." instance=ExtResource("8_54tqa")]
+position = Vector2(224, 224)
