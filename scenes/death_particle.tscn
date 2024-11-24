@@ -9,6 +9,8 @@ initial_velocity_max = 96.78
 angular_velocity_min = -1.60933e-05
 angular_velocity_max = -1.60933e-05
 gravity = Vector3(0, 50, 0)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x55lu"]
 
