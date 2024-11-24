@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxk6fdvhe1iuy"]
+[gd_scene load_steps=4 format=3 uid="uid://bxk6fdvhe1iuy"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_2c8pw"]
-[ext_resource type="Theme" uid="uid://bsyv5oofkmjy" path="res://font_theme.tres" id="2_e02f7"]
+[ext_resource type="Theme" path="res://font_theme.tres" id="2_e02f7"]
 [ext_resource type="AudioStream" uid="uid://c4sy75t47mv6u" path="res://sounds/brownian_noise.ogg" id="3_4074m"]
 
 [node name="StartMenu" type="Control"]
