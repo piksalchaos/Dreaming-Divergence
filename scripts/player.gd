@@ -7,16 +7,16 @@ const JUMP_VELOCITY = -500.0
 
 signal killed
 
-
-
 var is_dead = false
+var death_particles = preload("res://scenes/death_particle.tscn").instantiate()
 func _physics_process(delta: float) -> void:
+	if not enabled:
+		return
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if not enabled:
-		return
 	# Handle jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -35,6 +35,9 @@ func kill():
 	if is_dead:
 		return
 	is_dead = true
+	death_particles.global_position = global_position
+	death_particles.emitting = true
+	get_parent().add_child(death_particles)
 	killed.emit()
 	queue_free()
 

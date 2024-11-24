@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ewi880uhj1w"
-path="res://.godot/imported/conveyor_belt_placeholder.png-80798f1a9419f5b86eb27c1693db6149.ctex"
+uid="uid://coxld6lnubos1"
+path="res://.godot/imported/door_placeholder.png-1a226e9ec9c74ac46cbe086bf04231a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://conveyor_belt_placeholder.png"
-dest_files=["res://.godot/imported/conveyor_belt_placeholder.png-80798f1a9419f5b86eb27c1693db6149.ctex"]
+source_file="res://textures/door_placeholder.png"
+dest_files=["res://.godot/imported/door_placeholder.png-1a226e9ec9c74ac46cbe086bf04231a5.ctex"]
 
 [params]
 
