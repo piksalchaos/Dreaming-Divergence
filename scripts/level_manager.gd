@@ -16,7 +16,7 @@ func _ready() -> void:
 func on_player_death():
 	num_alive_players -= 1
 	if num_alive_players <= 0 and next_scene:
-		await get_tree().create_timer(scene_transition_time).timeout
+		await get_tree().create_timer(scene_transition_time, false).timeout
 		get_tree().change_scene_to_packed.call_deferred(next_scene)
 
 func _input(event):
