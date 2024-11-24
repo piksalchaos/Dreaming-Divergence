@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm20si2rndii5"]
+
+[ext_resource type="VideoStream" path="res://end_video.ogv" id="1_4mml8"]
+[ext_resource type="Script" path="res://scripts/end_video.gd" id="1_qa87u"]
+
+[node name="end_video" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qa87u")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 720.0
+stream = ExtResource("1_4mml8")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
