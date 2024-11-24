@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chq3ssb3ne0ah"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_qf44h"]
-[ext_resource type="Texture2D" uid="uid://cwqtj851q53dr" path="res://textures/hubert.png" id="2_qqpud"]
+[ext_resource type="Texture2D" uid="uid://bb3w6bwby5vmm" path="res://textures/guangxius textures/button_green_up.png" id="2_4hegx"]
 [ext_resource type="AudioStream" uid="uid://j8anadtqkyor" path="res://sounds/button.wav" id="3_sptk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c84m"]
@@ -11,9 +11,9 @@ size = Vector2(64, 64)
 script = ExtResource("1_qf44h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qqpud")
-region_enabled = true
-region_rect = Rect2(0, 0, 64, 64)
+position = Vector2(0, 11)
+scale = Vector2(2, 2)
+texture = ExtResource("2_4hegx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0c84m")
