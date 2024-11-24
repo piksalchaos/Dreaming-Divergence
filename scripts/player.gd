@@ -5,10 +5,13 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -520.0
 @export var enabled: bool = true
 
+@onready var floor_detector: Area2D = $FloorDetector
+
 signal killed
 
 var is_dead = false
 var death_particles = preload("res://scenes/death_particle.tscn").instantiate()
+
 func _physics_process(delta: float) -> void:
 	if not enabled:
 		return
@@ -28,6 +31,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	for body in floor_detector.get_overlapping_bodies():
+		if body is ConveyorBelt:
+			velocity.x += body.get_velocity()
 
 	move_and_slide()
 func kill():
