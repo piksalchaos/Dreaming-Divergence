@@ -23,5 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if num_players < players_needed:
 		return
 	for target in targets:
-		if target.is_in_group("switchable"):
+		if is_instance_valid(target) and target.is_in_group("switchable"):
 			target.switch()

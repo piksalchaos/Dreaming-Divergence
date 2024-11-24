@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=4 uid="uid://c1r2l1nri3mlu"]
+
+[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_sefxh"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_roypg"]
+[ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="4_ukiex"]
+[ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="4_vbmrk"]
+[ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_thvf4"]
+[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_gn0qw"]
+[ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="7_oobnd"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAMAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAJAAgAAQAAAAAAAAAJAAcAAQAAAAAAAAARAAoAAQAAAAAAAAARAAkAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAACAAcAAQAAAAAAAAABAAcAAQAAAAAAAAAAAAcAAQAAAAAAAAADAAgAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAACAAgAAQAAAAAAAAABAAgAAQAAAAAAAAAAAAgAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAADAAUAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAMAAQAAAAAAAAACAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAOAAcAAQAAAAAAAAARAAgAAQAAAAAAAAANAAYAAQAAAAAAAAA=")
+tile_set = ExtResource("1_sefxh")
+script = ExtResource("2_roypg")
+
+[node name="Player" parent="." instance=ExtResource("4_vbmrk")]
+position = Vector2(288, 416)
+
+[node name="Player2" parent="." instance=ExtResource("4_vbmrk")]
+position = Vector2(928, 544)
+
+[node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_ukiex")]
+position = Vector2(672, 352)
+targets = [NodePath("../Killbox"), NodePath("../Killbox2")]
+
+[node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_ukiex")]
+position = Vector2(928, 160)
+targets = [NodePath("../Door"), NodePath("../Door2"), NodePath("../Killbox4"), NodePath("../Killbox3")]
+
+[node name="Killbox" parent="." instance=ExtResource("5_thvf4")]
+position = Vector2(352, 608)
+is_enabled = false
+
+[node name="Killbox4" parent="." instance=ExtResource("5_thvf4")]
+position = Vector2(736, 608)
+is_enabled = false
+
+[node name="Killbox2" parent="." instance=ExtResource("5_thvf4")]
+position = Vector2(416, 608)
+is_enabled = false
+
+[node name="Killbox3" parent="." instance=ExtResource("5_thvf4")]
+position = Vector2(800, 608)
+is_enabled = false
+
+[node name="UI" parent="." instance=ExtResource("6_gn0qw")]
+metadata/_edit_lock_ = true
+
+[node name="Door" parent="." instance=ExtResource("7_oobnd")]
+position = Vector2(992, 480)
+is_open = false
+
+[node name="Door2" parent="." instance=ExtResource("7_oobnd")]
+position = Vector2(1056, 480)
+is_open = false
