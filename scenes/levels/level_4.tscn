@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://ddvpgfnejgwpx"]
+[gd_scene load_steps=8 format=4 uid="uid://ddmquwkbynse1"]
 
-[ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_pvr4h"]
+[ext_resource type="TileSet" uid="uid://bkd205k3pl5a3" path="res://scenes/tile_set.tres" id="1_pvr4h"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_15vnu"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_t7ck4"]
 [ext_resource type="PackedScene" uid="uid://chq3ssb3ne0ah" path="res://scenes/map_items/button.tscn" id="3_23erc"]
 [ext_resource type="PackedScene" uid="uid://c1r2l1nri3mlu" path="res://scenes/levels/level_5.tscn" id="3_lfoo3"]
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="4_1xl4l"]
-[ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_g5xoj"]
+[ext_resource type="PackedScene" uid="uid://cvu10ygs5njfp" path="res://scenes/ui.tscn" id="6_g5xoj"]
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="TileMapLayer2" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAADAAcAAQAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAcAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAAOAAUAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAMAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAgAAQAAAAAAAAACAAIAAQAAAAAAAAACAAcAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAACAAYAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAYAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAA=")
 tile_set = ExtResource("1_pvr4h")
 script = ExtResource("2_15vnu")

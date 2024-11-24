@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://fgl01idbxc1w"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_fcru4"]
+[ext_resource type="Theme" uid="uid://bsyv5oofkmjy" path="res://font_theme.tres" id="1_r2by2"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fcru4")
+
+[node name="MovingPoint" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="MovingPoint"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 677.0
+offset_right = 1083.0
+offset_bottom = 1862.0
+theme = ExtResource("1_r2by2")
+text = "Made for Hack Club's Counterspell game jam in Silicon Valley with the theme \"you are your own enemy\"
+
+
+Justin:
+game design
+scripting
+tileset design
+music
+
+Stanley:
+level design
+sound design
+
+
+
+
+
+
+Thank You For Playing!"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="MovingPoint"]
+offset_left = 582.0
+offset_top = 679.0
+offset_right = 1358.0
+offset_bottom = 1864.0
+theme = ExtResource("1_r2by2")
+text = "
+
+
+
+
+Wes:
+scripting
+level design
+
+
+
+Guangxiu:
+sprite design
+tileset design
+"
+autowrap_mode = 3
