@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://chmpklgegy66a"]
+[gd_scene load_steps=12 format=3 uid="uid://chmpklgegy66a"]
 
 [ext_resource type="Script" path="res://scripts/portal.gd" id="1_c55g8"]
-[ext_resource type="Texture2D" path="res://textures/portal.png" id="2_r3baj"]
+[ext_resource type="Texture2D" uid="uid://cylu54hbyl7pr" path="res://textures/portal.png" id="2_r3baj"]
+[ext_resource type="Texture2D" uid="uid://b1qxypekl3ei1" path="res://textures/portal_position_indicator.png" id="3_a62qj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j226r"]
 atlas = ExtResource("2_r3baj")
@@ -35,6 +36,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5htn"]
 radius = 24.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs03u"]
+atlas = ExtResource("3_a62qj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6385"]
+atlas = ExtResource("3_a62qj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iids"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs03u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6385")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Portal" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_c55g8")
 teleport_position = Vector2(200, 200)
@@ -47,5 +70,8 @@ frame_progress = 0.00572931
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d5htn")
 debug_color = Color(0.819954, 0.360367, 0.480192, 0.42)
+
+[node name="portalTargetSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1iids")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

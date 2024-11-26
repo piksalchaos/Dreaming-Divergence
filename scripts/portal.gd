@@ -2,6 +2,9 @@ extends Area2D
 
 @export var teleport_position: Vector2
 @export var is_enabled: bool
+
+func _ready():
+	$portalTargetSprite.global_position = teleport_position
 func _on_body_entered(body: Node2D) -> void:
 	##return
 	if body is not Player:
