@@ -1,27 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://chq3ssb3ne0ah"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_qf44h"]
-[ext_resource type="Texture2D" uid="uid://cwqtj851q53dr" path="res://textures/hubert.png" id="2_qqpud"]
+[ext_resource type="Texture2D" uid="uid://cpbsd7ijaox48" path="res://textures/button_spritesheet.png" id="2_rrtgx"]
 [ext_resource type="AudioStream" uid="uid://j8anadtqkyor" path="res://sounds/button.wav" id="3_sptk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c84m"]
-size = Vector2(64, 64)
+size = Vector2(52, 24)
 
 [node name="Button" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_qf44h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qqpud")
-region_enabled = true
-region_rect = Rect2(0, 0, 64, 64)
+position = Vector2(0, 11)
+scale = Vector2(2, 2)
+texture = ExtResource("2_rrtgx")
+hframes = 3
+vframes = 2
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_0c84m")
 
 [node name="buttonSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sptk5")
 volume_db = -7.027
-bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

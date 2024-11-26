@@ -1,14 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://gl6l8si3deyc"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_agjri"]
+[ext_resource type="Theme" path="res://font_theme.tres" id="2_fajy7"]
 
 [sub_resource type="Theme" id="Theme_40lfs"]
 default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_adskm"]
-default_font_size = 30
-
-[sub_resource type="Theme" id="Theme_b0o0g"]
 default_font_size = 30
 
 [node name="UI" type="Control"]
@@ -60,5 +58,5 @@ fit_content = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme = SubResource("Theme_b0o0g")
+theme = ExtResource("2_fajy7")
 text = "Tab to open menu"

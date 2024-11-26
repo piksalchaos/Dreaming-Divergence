@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://buuk825qfl0fd"]
+[gd_scene load_steps=10 format=4 uid="uid://buuk825qfl0fd"]
 
 [ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_bl60q"]
 [ext_resource type="PackedScene" uid="uid://df8yprbv6s7ll" path="res://scenes/player.tscn" id="2_8ek7u"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_at7rb"]
-[ext_resource type="PackedScene" uid="uid://k25dutlefheh" path="res://scenes/levels/level_2.tscn" id="3_d8tbw"]
+[ext_resource type="PackedScene" uid="uid://k25dutlefheh" path="res://scenes/levels/level_2.tscn" id="3_chpi0"]
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_qpj6j"]
 [ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_a47uf"]
+[ext_resource type="PackedScene" uid="uid://vp74ck2wyooj" path="res://scenes/player_2.tscn" id="7_r41ax"]
 
 [sub_resource type="Theme" id="Theme_uevh8"]
 default_font_size = 30
@@ -13,17 +14,14 @@ default_font_size = 30
 [sub_resource type="Theme" id="Theme_6ee5d"]
 default_font_size = 30
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="TileMapLayer3" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAAAAP//AQAAAAAAAAD//wAAAQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD9////AQAAAAAAAAD8////AQAAAAAAAAD9/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAASAAAAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAASAAMAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAD//woAAQAAAAAAAAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAASAAoAAQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQAAAAAAAAAIAP//AQAAAAAAAAAKAP//AQAAAAAAAAALAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP//AQAAAAAAAAAOAP//AQAAAAAAAAAPAP//AQAAAAAAAAAQAP//AQAAAAAAAAARAP//AQAAAAAAAAASAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAYAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAAAAQAAAAAAAAARAAYAAQAAAAAAAAAQAAYAAQAAAAAAAAAPAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAADAAYAAQAAAAAAAAACAAYAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAA=")
 tile_set = ExtResource("1_bl60q")
 script = ExtResource("2_at7rb")
-next_scene = ExtResource("3_d8tbw")
+next_scene = ExtResource("3_chpi0")
 
 [node name="Player" parent="." instance=ExtResource("2_8ek7u")]
 position = Vector2(96, 352)
-
-[node name="Player2" parent="." instance=ExtResource("2_8ek7u")]
-position = Vector2(864, 352)
 
 [node name="Killbox" parent="." instance=ExtResource("5_qpj6j")]
 position = Vector2(672, 608)
@@ -54,3 +52,6 @@ offset_right = 706.0
 offset_bottom = 23.0
 theme = SubResource("Theme_6ee5d")
 text = "A - Left"
+
+[node name="Player2" parent="." instance=ExtResource("7_r41ax")]
+position = Vector2(864, 352)

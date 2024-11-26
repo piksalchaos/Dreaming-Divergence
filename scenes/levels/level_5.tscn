@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c1r2l1nri3mlu"]
+[gd_scene load_steps=10 format=4 uid="uid://c1r2l1nri3mlu"]
 
 [ext_resource type="TileSet" uid="uid://cx8c4gf4eg0a8" path="res://scenes/tile_set.tres" id="1_sefxh"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_roypg"]
@@ -8,18 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://bg1y0vwoau1i4" path="res://scenes/map_items/killbox.tscn" id="5_thvf4"]
 [ext_resource type="PackedScene" uid="uid://gl6l8si3deyc" path="res://scenes/ui.tscn" id="6_gn0qw"]
 [ext_resource type="PackedScene" uid="uid://1q4r2nlw718d" path="res://scenes/map_items/door.tscn" id="7_oobnd"]
+[ext_resource type="PackedScene" uid="uid://vp74ck2wyooj" path="res://scenes/player_2.tscn" id="9_d8o4v"]
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="TileMapLayer3" type="TileMapLayer"]
 tile_map_data = PackedByteArray("AAAPAAIAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAMAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAP//AQAAAAAAAAAOAP//AQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAALAP//AQAAAAAAAAAKAP//AQAAAAAAAAAJAP//AQAAAAAAAAAIAP//AQAAAAAAAAAHAP//AQAAAAAAAAAGAP//AQAAAAAAAAAFAP//AQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAJAAgAAQAAAAAAAAAJAAcAAQAAAAAAAAARAAoAAQAAAAAAAAARAAkAAQAAAAAAAAARAAcAAQAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAARAP//AQAAAAAAAAAQAP//AQAAAAAAAAAAAP//AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAD//wgAAQAAAAAAAAD//wkAAQAAAAAAAAACAAcAAQAAAAAAAAABAAcAAQAAAAAAAAAAAAcAAQAAAAAAAAADAAgAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAACAAgAAQAAAAAAAAABAAgAAQAAAAAAAAAAAAgAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAADAAUAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAMAAQAAAAAAAAACAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAOAAcAAQAAAAAAAAARAAgAAQAAAAAAAAANAAYAAQAAAAAAAAA=")
 tile_set = ExtResource("1_sefxh")
 script = ExtResource("2_roypg")
 next_scene = ExtResource("3_b0pix")
 
 [node name="Player" parent="." instance=ExtResource("4_vbmrk")]
-position = Vector2(288, 416)
-
-[node name="Player2" parent="." instance=ExtResource("4_vbmrk")]
-position = Vector2(928, 544)
+position = Vector2(288, 544)
 
 [node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("4_ukiex")]
 position = Vector2(672, 352)
@@ -55,3 +53,6 @@ is_open = false
 [node name="Door2" parent="." instance=ExtResource("7_oobnd")]
 position = Vector2(1056, 480)
 is_open = false
+
+[node name="Player2" parent="." instance=ExtResource("9_d8o4v")]
+position = Vector2(928, 544)

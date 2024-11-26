@@ -1,43 +1,54 @@
 [gd_scene load_steps=8 format=3 uid="uid://df8yprbv6s7ll"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ae77p"]
-[ext_resource type="Texture2D" uid="uid://dn6628dggx1f6" path="res://textures/icon.svg" id="1_x2gi8"]
+[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_blue_stand.png" id="2_pe1x3"]
+[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_blue_walk.png" id="3_g2vx0"]
 [ext_resource type="AudioStream" uid="uid://dpox861a1f43s" path="res://sounds/jump.wav" id="4_e6u3p"]
-[ext_resource type="PackedScene" uid="uid://d2y1xje3nhtik" path="res://sounds/death_sfx.tscn" id="4_yyf1c"]
+[ext_resource type="PackedScene" path="res://sounds/death_sfx.tscn" id="4_yyf1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1dt"]
-size = Vector2(62, 62)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjplt"]
-atlas = ExtResource("1_x2gi8")
-region = Rect2(0, 0, 128, 128)
+size = Vector2(36, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tw6i3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sjplt")
+"texture": ExtResource("2_pe1x3")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g2vx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pe1x3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player", "switchable"]]
 script = ExtResource("1_ae77p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
 shape = SubResource("RectangleShape2D_jo1dt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_tw6i3")
+animation = &"walk"
+frame_progress = 0.184498
 
 [node name="jumpSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_e6u3p")
 volume_db = -17.802
-bus = &"SFX"
 playback_type = 1
 
 [node name="deathSFX" parent="." instance=ExtResource("4_yyf1c")]
+position = Vector2(0, 8)

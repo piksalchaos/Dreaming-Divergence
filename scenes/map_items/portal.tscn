@@ -1,59 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://chmpklgegy66a"]
+[gd_scene load_steps=8 format=3 uid="uid://chmpklgegy66a"]
 
 [ext_resource type="Script" path="res://scripts/portal.gd" id="1_c55g8"]
-[ext_resource type="Texture2D" uid="uid://oa0jjbapsay8" path="res://textures/New Piskel (1).png" id="2_apkxb"]
-[ext_resource type="AudioStream" uid="uid://cuaaso77kdyyx" path="res://sounds/portal.wav" id="3_l0hjg"]
+[ext_resource type="Texture2D" path="res://textures/portal.png" id="2_r3baj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouubm"]
-atlas = ExtResource("2_apkxb")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j226r"]
+atlas = ExtResource("2_r3baj")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xinjm"]
-atlas = ExtResource("2_apkxb")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvui1"]
+atlas = ExtResource("2_r3baj")
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5m5w"]
-atlas = ExtResource("2_apkxb")
-region = Rect2(0, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lpxa"]
+atlas = ExtResource("2_r3baj")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_siiwo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ouubm")
+"texture": SubResource("AtlasTexture_j226r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xinjm")
+"texture": SubResource("AtlasTexture_hvui1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s5m5w")
+"texture": SubResource("AtlasTexture_8lpxa")
 }],
 "loop": true,
 "name": &"default",
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nykfq"]
-radius = 36.0
-height = 110.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5htn"]
+radius = 24.0
 
 [node name="Portal" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_c55g8")
 teleport_position = Vector2(200, 200)
 
 [node name="portalSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -1)
-scale = Vector2(4.19126, 3.21892)
 sprite_frames = SubResource("SpriteFrames_siiwo")
 autoplay = "default"
 frame_progress = 0.00572931
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 0)
-shape = SubResource("CapsuleShape2D_nykfq")
+shape = SubResource("CircleShape2D_d5htn")
 debug_color = Color(0.819954, 0.360367, 0.480192, 0.42)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_l0hjg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

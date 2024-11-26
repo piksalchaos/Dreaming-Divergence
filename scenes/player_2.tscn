@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://vp74ck2wyooj"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_o471q"]
+[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_red_stand.png" id="3_7g5a6"]
+[ext_resource type="AudioStream" uid="uid://dpox861a1f43s" path="res://sounds/jump.wav" id="4_bnf12"]
+[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_red_walk.png" id="4_v8fyx"]
+[ext_resource type="PackedScene" path="res://sounds/death_sfx.tscn" id="5_a1xfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1dt"]
+size = Vector2(36, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u5ck"]
+atlas = ExtResource("3_7g5a6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j76ar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u5ck")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7g5a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v8fyx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player2" type="CharacterBody2D" groups=["player", "switchable"]]
+script = ExtResource("1_o471q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
+shape = SubResource("RectangleShape2D_jo1dt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_j76ar")
+animation = &"walk"
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bnf12")
+volume_db = -17.802
+playback_type = 1
+
+[node name="deathSFX" parent="." instance=ExtResource("5_a1xfs")]
+position = Vector2(0, 8)

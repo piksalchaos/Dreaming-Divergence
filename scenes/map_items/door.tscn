@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1q4r2nlw718d"]
+[gd_scene load_steps=4 format=3 uid="uid://1q4r2nlw718d"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_oqthy"]
-[ext_resource type="Texture2D" uid="uid://coxld6lnubos1" path="res://textures/door_placeholder.png" id="1_qramp"]
-[ext_resource type="AudioStream" uid="uid://begeealbf2dk5" path="res://sounds/trapdoor.wav" id="3_oscmw"]
+[ext_resource type="Texture2D" path="res://textures/door.png" id="2_wn6tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h20yh"]
 size = Vector2(64, 64)
@@ -14,15 +13,10 @@ script = ExtResource("1_oqthy")
 shape = SubResource("RectangleShape2D_h20yh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qramp")
+texture = ExtResource("2_wn6tv")
 hframes = 2
 
 [node name="InnerBodyDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InnerBodyDetector"]
 shape = SubResource("RectangleShape2D_h20yh")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_oscmw")
-
-[connection signal="body_shape_entered" from="InnerBodyDetector" to="." method="_on_inner_body_detector_body_shape_entered"]

@@ -6,7 +6,7 @@ func _on_body_entered(body: Node2D) -> void:
 	##return
 	if body is not Player:
 		return
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	body.global_position = teleport_position
 	pass # Replace with function body.
 
