@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://j8anadtqkyor" path="res://sounds/button.wav" id="3_sptk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c84m"]
-size = Vector2(52, 24)
+size = Vector2(52, 22)
 
 [node name="Button" type="Area2D" groups=["switchable"]]
 script = ExtResource("1_qf44h")
@@ -19,7 +19,7 @@ vframes = 2
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 21)
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_0c84m")
 
 [node name="buttonSFX" type="AudioStreamPlayer" parent="."]

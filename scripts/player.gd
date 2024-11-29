@@ -57,3 +57,7 @@ func kill():
 
 func switch():
 	enabled = not enabled
+	if enabled:
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.pause()

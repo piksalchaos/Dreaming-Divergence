@@ -25,6 +25,7 @@ metadata/_edit_lock_ = true
 
 [node name="Button" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]
 position = Vector2(96, 544)
+rotation = 3.14159
 targets = [NodePath("../Door")]
 
 [node name="Button2" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("5_frbcq")]

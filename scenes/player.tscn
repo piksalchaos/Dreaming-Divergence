@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://df8yprbv6s7ll"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ae77p"]
-[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_blue_stand.png" id="2_pe1x3"]
-[ext_resource type="Texture2D" path="res://textures/guangxius textures/girl_blue_walk.png" id="3_g2vx0"]
+[ext_resource type="Texture2D" uid="uid://8k73hbtqs3mh" path="res://textures/guangxius textures/girl_blue_stand.png" id="2_pe1x3"]
+[ext_resource type="Texture2D" uid="uid://dpsg76xdsddj2" path="res://textures/guangxius textures/girl_blue_walk.png" id="3_g2vx0"]
 [ext_resource type="AudioStream" uid="uid://dpox861a1f43s" path="res://sounds/jump.wav" id="4_e6u3p"]
-[ext_resource type="PackedScene" path="res://sounds/death_sfx.tscn" id="4_yyf1c"]
+[ext_resource type="PackedScene" uid="uid://b1n6n6ac736f1" path="res://sounds/death_sfx.tscn" id="4_yyf1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1dt"]
 size = Vector2(36, 62)

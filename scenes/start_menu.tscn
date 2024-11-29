@@ -1,12 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxk6fdvhe1iuy"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_2c8pw"]
-[ext_resource type="Texture2D" path="res://textures/guangxius textures/homescreen_1.png" id="2_23mir"]
+[ext_resource type="Texture2D" uid="uid://dkjssst7lkv5g" path="res://textures/guangxius textures/homescreen_1.png" id="2_23mir"]
 [ext_resource type="Theme" path="res://font_theme.tres" id="2_e02f7"]
 [ext_resource type="AudioStream" uid="uid://c4sy75t47mv6u" path="res://sounds/brownian_noise.ogg" id="3_4074m"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvval"]
-atlas = ExtResource("2_23mir")
+[ext_resource type="VideoStream" path="res://textures/guangxius textures/start_animation.ogv" id="5_e463e"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -18,10 +16,21 @@ grow_vertical = 2
 script = ExtResource("1_2c8pw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = SubResource("AtlasTexture_wvval")
+texture = ExtResource("2_23mir")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+mouse_filter = 1
+stream = ExtResource("5_e463e")
+autoplay = true
+loop = true
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -42,7 +51,6 @@ flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4074m")
-autoplay = true
 parameters/looping = true
 
 [connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
